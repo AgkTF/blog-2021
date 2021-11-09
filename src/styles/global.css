@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Sansita';
+    src: url(/fonts/sansita/Sansita-Regular.ttf) format('truetype');
+    font-weight: 400;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Sansita';
+    src: url(/fonts/sansita/Sansita-Bold.ttf) format('truetype');
+    font-weight: 700;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Rubik';
+    src: url(/fonts/rubik/Rubik-Light.ttf) format('truetype');
+    font-weight: 300;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Rubik';
+    src: url(/fonts/rubik/Rubik-Regular.ttf) format('truetype');
+    font-weight: 400;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Rubik';
+    src: url(/fonts/rubik/Rubik-Medium.ttf) format('truetype');
+    font-weight: 500;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Rubik';
+    src: url(/fonts/rubik/Rubik-SemiBold.ttf) format('truetype');
+    font-weight: 600;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Rubik';
+    src: url(/fonts/rubik/Rubik-Bold.ttf) format('truetype');
+    font-weight: 700;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Racing';
+    src: url(/fonts/racing/RacingSansOne-Regular.ttf) format('truetype');
+    font-weight: 400;
+    font-display: swap;
+  }
+}
