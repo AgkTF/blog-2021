@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <nav className="p-4 w-full">
       <div className="flex items-center justify-between max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl m-auto">
-        <h2 className="font-bold text-xl">
+        <h2 className="font-bold text-xl text-headline-light dark:text-headline-dark">
           <Link href="/">
             <a className="flex items-center gap-2">
               <svg
@@ -25,9 +25,11 @@ const Navbar = () => {
                   <path d="M243.1,175.4c12,1.3,24.1,2.2,36,4.1,54,8.8,107.9,18.3,161.9,26.6,11.4,1.8,18.5,6.4,23.8,16.4,6.5,12.4,14.2,24.1,21.4,36.1-1.1.8-2.3,1.6-3.4,2.4-6.7-10.2-13.8-20.2-20-30.7-5.6-9.4-12.5-14.4-24.1-16.2-64.2-10-128.2-21.2-192.3-32.1-1.4-.2-2.6-1.3-3.9-2,.2-1.4.4-3,.6-4.6Zm182.1,20.8q-77.1-12.3-154.3-24.5c.4-2.5.8-5,1.3-7.5q76.8,14.1,153.7,28.1C425.7,193.6,425.5,194.9,425.2,196.2ZM318.6,680.5c-6,.6-13.1,3.4-17.8,1.2a271.213,271.213,0,0,1-51.6-31.1c23,7.9,46,15.7,69,23.6C318.4,676.3,318.5,678.4,318.6,680.5ZM60.6,509.2c11.5,17.5,23.1,34.9,34.6,52.4-1.5,1-3,2.1-4.5,3.1-12.2-16.9-24.4-33.9-36.6-50.8C56.2,512.3,58.4,510.8,60.6,509.2Z" />
                 </g>
               </svg>
-              <p className="text-2xl sm:text-3xl tracking-wide font-racing">
+              <p className="text-2xl sm:text-3xl tracking-wide font-racing text-headline-light dark:text-headline-dark">
                 Agk
-                <span className="text-base sm:text-lg">Blog</span>
+                <span className="ml-px text-base sm:text-lg text-reddish">
+                  Blog
+                </span>
               </p>
             </a>
           </Link>

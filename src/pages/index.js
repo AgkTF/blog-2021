@@ -9,7 +9,7 @@ export default function Home() {
     >
       <main className="max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl flex flex-col justify-center mx-5 xs:mx-auto">
         <section className="mt-6 sm:mt-10 w-full">
-          <h1 className="font-bold font-sansita text-2xl sm:text-3xl">
+          <h1 className="font-bold font-sansita text-2xl sm:text-3xl text-headline-light dark:text-headline-dark">
             Featured
           </h1>
         </section>
