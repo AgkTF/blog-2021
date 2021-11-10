@@ -7,7 +7,7 @@ const TagPill = ({ tagName }) => {
       className="px-2 bg-highlight bg-opacity-25 text-highlight font-rubik font-medium text-xs sm:text-sm rounded"
       style={{ width: 'fit-content' }}
     >
-      <Link href={`/${tagName.toLowerCase()}`}>{tagName}</Link>
+      <Link href={`/topics/${tagName.toLowerCase()}`}>{tagName}</Link>
     </div>
   );
 };

@@ -1,12 +1,8 @@
 import { PageLayout } from 'components/Layout';
 import { PostCard, PostPreview } from 'components/UIElements';
-import { allPosts } from 'Utils/postsFetcher';
+import { featuredPosts, remainingPosts } from 'Utils/postsFetcher';
 
 export default function Home() {
-  const featuredPosts = allPosts
-    .filter(post => post.module.meta.featureIndex)
-    .sort((a, b) => (a.featureIndex > b.featureIndex ? -1 : 1));
-
   return (
     <PageLayout
       pageTitle="Personal Blog By Agk"
@@ -52,7 +48,7 @@ export default function Home() {
           <h1 className="font-bold font-sansita text-headline-light dark:text-headline-dark text-2xl sm:text-3xl">
             Latest
           </h1>
-          {allPosts.map(post => {
+          {remainingPosts.map(post => {
             const { postTitle, publishDate, tagName, postPreview } =
               post.module.meta;
             return (
