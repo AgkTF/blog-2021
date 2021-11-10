@@ -1,5 +1,5 @@
 import { PageLayout } from 'components/Layout';
-import { PostCard } from 'components/UIElements';
+import { PostCard, PostPreview } from 'components/UIElements';
 import { allPosts } from 'Utils/postsFetcher';
 
 export default function Home() {
@@ -46,6 +46,26 @@ export default function Home() {
               ))}
             </div>
           </div>
+        </section>
+
+        <section className="mt-8 sm:mt-12 w-full">
+          <h1 className="font-bold font-sansita text-headline-light dark:text-headline-dark text-2xl sm:text-3xl">
+            Latest
+          </h1>
+          {allPosts.map(post => {
+            const { postTitle, publishDate, tagName, postPreview } =
+              post.module.meta;
+            return (
+              <PostPreview
+                key={post.link}
+                contentPreview={postPreview}
+                tagName={tagName}
+                date={publishDate}
+                postTitle={postTitle}
+                link={post.link}
+              />
+            );
+          })}
         </section>
       </main>
     </PageLayout>
