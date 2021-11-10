@@ -10,7 +10,7 @@ const Navbar = () => {
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 491.3 518.331"
-                className="h-16 w-16"
+                className="h-14 w-14"
                 fill="currentColor"
               >
                 <g transform="translate(-54.1 -164.2)">

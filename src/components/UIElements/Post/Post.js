@@ -19,7 +19,7 @@ const Post = ({ children, meta }) => {
       pageUrl={pageUrl}
     >
       {/* <main className="pb-16 mt-5 mx-5 xs:mx-auto sm:mx-auto max-w-xl"> */}
-      <main className="pb-16 mt-5 max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl m-auto">
+      <main className="pb-16  mt-5 max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl m-auto">
         <TagPill tagName={tagName} />
 
         <p className="mt-2 text-xs sm:text-sm text-paragraph-light dark:text-paragraph-dark font-rubik">
@@ -31,7 +31,7 @@ const Post = ({ children, meta }) => {
         </h1>
 
         <ShareIcons />
-        <hr className="my-5" />
+        <hr className="my-5 text-gray-200" />
 
         <article>
           <div className="prose dark:prose-dark font-rubik">{children}</div>
@@ -39,10 +39,10 @@ const Post = ({ children, meta }) => {
 
         {updateDate ? (
           <>
-            <hr className="my-5" />
+            <hr className="my-5 text-gray-200" />
             <p className="pb-2 mt-2 text-xs sm:text-sm text-paragraph-light dark:text-paragraph-dark font-rubik">
               <span className="text-code-light dark:text-code-dark">
-                Last Updated:
+                Last Updated:{' '}
               </span>
               {enUSDateRenderer(updateDate)}
             </p>

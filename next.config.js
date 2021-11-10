@@ -1,8 +1,9 @@
-const rehypePrism = require('@mapbox/rehype-prism');
+// const rehypePrism = require('@mapbox/rehype-prism');
 
 const withMDX = require('@next/mdx')({
+  extension: /\.mdx?$/,
   options: {
-    rehypePlugins: [rehypePrism],
+    remarkPlugins: [require('remark-prism')],
   },
 });
 

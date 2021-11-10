@@ -1,4 +1,5 @@
 import { TagPill, Post } from 'components/UIElements';
+import MDXHighlighter from 'components/MDXHighlighter/MDXHighlighter';
 
 import Image from 'next/image';
 
@@ -42,6 +43,22 @@ The problem was that up until today, we didn't actually have anywhere to publish
 We're a team of developers so naturally there was no way we could convince ourselves to use something off-the-shelf, and opted to build something simple and custom with [Next.js](http://nextjs.org).
 
 There are a lot of things to like about Next.js, but the primary reason we decided to use it is that it has great support for [MDX](https://mdxjs.com/), which is the format we wanted to use to author our posts.
+
+```js
+import { bradlc } from '@/authors'
+import openGraphImage from './card.jpeg'
+
+export const meta = {
+  title: 'Introducing linting for Tailwind CSS IntelliSense',
+  description: \`Today we’re releasing a new version of the Tailwind CSS IntelliSense extension for Visual Studio Code that adds Tailwind-specific linting to both your CSS and your markup.\`,
+  date: '2020-06-23T18:52:03Z',
+  authors: [bradlc],
+  image: openGraphImage,
+  discussion: 'https://github.com/tailwindcss/tailwindcss/discussions/1956',
+}
+
+// Post content goes here
+```
 
 MDX is really interesting because unlike regular Markdown, you can embed live React components directly in your content. This is exciting because it unlocks a lot of opportunities in how you communicate ideas in your writing. Instead of relying only on images, videos, or code blocks, you can build interactive demos and stick them directly between two paragraphs of content, without throwing away the ergonomics of authoring in Markdown.
 
