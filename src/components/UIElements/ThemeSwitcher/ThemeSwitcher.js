@@ -44,9 +44,9 @@ const ThemeSwitcher = () => {
       }}
     >
       {theme === 'dark' ? (
-        <SunIcon className="w-6 h-6 text-headline-light dark:text-headline-dark transition duration-150 ease-in-out transform hover:-rotate-12" />
-      ) : (
         <MoonIcon className="w-6 h-6 text-headline-light dark:text-headline-dark transition duration-150 ease-in-out transform hover:-rotate-12" />
+      ) : (
+        <SunIcon className="w-6 h-6 text-headline-light dark:text-headline-dark transition duration-150 ease-in-out transform hover:-rotate-12" />
       )}
     </button>
   );

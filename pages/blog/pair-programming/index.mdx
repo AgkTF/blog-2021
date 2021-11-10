@@ -1,0 +1,73 @@
+import { TagPill, Post } from 'components/UIElements';
+import image from './3.jpg';
+import Image from 'next/image';
+
+export const meta = {
+  postTitle: 'Pair Programming: Does it really work?!',
+  publishDate: '2020-09-11',
+  updateDate: '',
+  featureIndex: 3,
+  tagName: 'Agile',
+  imgPreview: { image },
+  altText: 'Two people coding',
+  postPreview:
+    'As you can see, we import the BlogPost component, which receives the meta and the body of the post. The parameter children is the body of the blog post or, to be precise, everything that comes after the meta object. It is the function responsible for rendering the post.',
+};
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>;
+
+<figure>
+  <Image
+    src={img}
+    alt="whatever"
+    width="2400"
+    height="1600"
+    layout="responsive"
+    className="object-cover"
+    priority
+  />
+  <figcaption>Two people looking at a computer</figcaption>
+</figure>
+
+A few months back we quietly released [Heroicons](https://www.heroicons.com/), a set of free SVG icons we initially designed to support the components in Tailwind UI. Today we’re launching the official [Heroicons web experience](https://www.heroicons.com/), which makes it easier than ever to search for icons and quickly copy them to your clipboard as Tailwind-ready HTML or JSX.
+
+There are currently over 220 icons available in both medium and small sizes, with size designed to serve a different use-case:
+
+- Medium icons are designed to be rendered at 24x24, and work well for things like primary navigation and marketing sections.
+- Small icons are designed to be rendered at 20x20, and work well for buttons, form elements and to support text.
+
+All of the icons are Tailwind-ready, and are easy to style with Tailwind’s built-in size and color utilities.
+
+```js
+import { bradlc } from '@/authors'
+import openGraphImage from './card.jpeg'
+
+export const meta = {
+  title: 'Introducing linting for Tailwind CSS IntelliSense',
+  description: \`Today we’re releasing a new version of the Tailwind CSS IntelliSense extension for Visual Studio Code that adds Tailwind-specific linting to both your CSS and your markup.\`,
+  date: '2020-06-23T18:52:03Z',
+  authors: [bradlc],
+  image: openGraphImage,
+  discussion: 'https://github.com/tailwindcss/tailwindcss/discussions/1956',
+}
+
+// Po
+```
+
+For best results, use h-6 w-6 for medium icons, and h-5 w-5 for small icons.
+
+## Just the beginning
+
+We’ve got lots of ideas for both new icons, as well as new icon styles _(duotone anyone?)_ that we’re excited to design and release in the coming months.
+
+Designing this site also got me itching to refresh the Hero Patterns site, so you’ll probably see something like this show up at [heropatterns.com](http://www.heropatterns.com/) pretty soon:
+
+We’ve got a bunch of [other “Hero” domains](https://twitter.com/steveschoger/status/1266042614710767616?s=20) waiting to be put to use too, and I’m pumped to reveal what we’re working on for those soon.
+
+## Got a suggestion?
+
+If you have any ideas for new icons we’d love to hear them! Head over to the [Heroicons GitHub repository](https://github.com/tailwindlabs/heroicons) and open an issue to make a suggestion.
+
+```
+
+```

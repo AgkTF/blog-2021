@@ -1,0 +1,72 @@
+import { TagPill, Post } from 'components/UIElements';
+import Image from 'next/image';
+import image from './3.jpg';
+
+export const meta = {
+  postTitle: 'Building your blog with Next.js and Tailwind',
+  publishDate: '2020-11-11',
+  updateDate: '',
+  featureIndex: 1,
+  tagName: 'Next',
+  imgPreview: { image },
+  altText: 'XPS computer',
+  postPreview:
+    'As you can see, we import the BlogPost component, which receives the meta and the body of the post. The parameter children is the body of the blog post or, to be precise, everything that comes after the meta object. It is the function responsible for rendering the post.',
+  pageDescription: 'Building your blog with Next.js and Tailwind',
+  pageUrl: 'https://blog.agktf.com/blog/build-your-blog-with-next-and-tailwind',
+};
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>;
+
+<figure>
+  <Image
+    src={image}
+    alt="whatever"
+    width="1920"
+    height="1282"
+    layout="responsive"
+    className="object-cover"
+    priority
+  />
+  <figcaption>XPS computer</figcaption>
+</figure>
+
+A few months back we quietly released [Heroicons](https://www.heroicons.com/), a set of free SVG icons we initially designed to support the components in Tailwind UI. Today we’re launching the official [Heroicons web experience](https://www.heroicons.com/), which makes it easier than ever to search for icons and quickly copy them to your clipboard as Tailwind-ready HTML or JSX.
+
+There are currently over 220 icons available in both medium and small sizes, with size designed to serve a different use-case:
+
+- Medium icons are designed to be rendered at 24x24, and work well for things like primary navigation and marketing sections.
+- Small icons are designed to be rendered at 20x20, and work well for buttons, form elements and to support text.
+
+All of the icons are Tailwind-ready, and are easy to style with Tailwind’s built-in size and color utilities.
+
+```xml
+<svg
+  class="h-6 w-6 text-indigo-500"
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke="currentColor"
+>
+  <path
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    d="M17 8l4 4m0 0l-4 4m4-4H3"
+  />
+</svg>
+```
+
+For best results, use h-6 w-6 for medium icons, and h-5 w-5 for small icons.
+
+## Just the beginning
+
+We’ve got lots of ideas for both new icons, as well as new icon styles _(duotone anyone?)_ that we’re excited to design and release in the coming months.
+
+Designing this site also got me itching to refresh the Hero Patterns site, so you’ll probably see something like this show up at [heropatterns.com](http://www.heropatterns.com/) pretty soon:
+
+We’ve got a bunch of [other “Hero” domains](https://twitter.com/steveschoger/status/1266042614710767616?s=20) waiting to be put to use too, and I’m pumped to reveal what we’re working on for those soon.
+
+## Got a suggestion?
+
+If you have any ideas for new icons we’d love to hear them! Head over to the [Heroicons GitHub repository](https://github.com/tailwindlabs/heroicons) and open an issue to make a suggestion.
