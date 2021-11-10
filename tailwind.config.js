@@ -22,6 +22,10 @@ module.exports = {
           light: '#f5f5f7',
           dark: '#232946',
         },
+        paragraph: {
+          light: '#5f6c7b',
+          dark: '#b8c1ec',
+        },
         tertiary: {
           light: '#ef4565',
           dark: '#eebbc3',
@@ -47,10 +51,104 @@ module.exports = {
           dark: '#23294696',
         },
       },
+      typography: theme => {
+        return {
+          DEFAULT: {
+            css: {
+              color: theme('colors.paragraph.light'),
+              maxWidth: false,
+              code: {
+                color: theme('colors.code.light'),
+              },
+              a: {
+                color: theme('colors.link.light'),
+              },
+              blockquote: {
+                color: theme('colors.paragraph.light'),
+              },
+              strong: {
+                color: theme('colors.paragraph.light'),
+                fontWeight: '700',
+              },
+              em: {
+                color: '#ef4565',
+                fontWeight: '500',
+              },
+              h1: {
+                color: theme('colors.paragraph.light'),
+              },
+              h2: {
+                color: theme('colors.paragraph.light'),
+              },
+              h3: {
+                color: theme('colors.paragraph.light'),
+              },
+              h4: {
+                color: theme('colors.paragraph.light'),
+              },
+              img: {
+                borderRadius: '4px',
+              },
+              'figure figcaption': {
+                color: theme('colors.paragraph.light'),
+                textAlign: 'center',
+              },
+            },
+          },
+          dark: {
+            css: {
+              color: theme('colors.paragraph.dark'),
+              maxWidth: false,
+              code: {
+                color: theme('colors.code.dark'),
+              },
+              a: {
+                color: theme('colors.link.dark'),
+              },
+              blockquote: {
+                color: theme('colors.paragraph.dark'),
+              },
+              strong: {
+                color: theme('colors.paragraph.dark'),
+                fontWeight: '700',
+              },
+              em: {
+                color: '#ef4565',
+                fontWeight: '500',
+              },
+              h1: {
+                color: theme('colors.paragraph.dark'),
+              },
+              h2: {
+                color: theme('colors.paragraph.dark'),
+              },
+              h3: {
+                color: theme('colors.paragraph.dark'),
+              },
+              h4: {
+                color: theme('colors.paragraph.dark'),
+              },
+              img: {
+                borderRadius: '4px',
+              },
+              'figure figcaption': {
+                color: theme('colors.paragraph.dark'),
+                textAlign: 'center',
+              },
+            },
+          },
+        };
+      },
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      typography: ['responsive', 'dark'],
+    },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography')({
+      modifiers: [],
+    }),
+  ],
 };

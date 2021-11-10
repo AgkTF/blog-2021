@@ -1,0 +1,52 @@
+import { TagPill, Post } from 'components/UIElements';
+
+import Image from 'next/image';
+
+import img from './1.jpg';
+
+export const meta = {
+  postTitle: 'Events In React',
+  publishDate: '2021-05-21',
+  updateDate: '2021-07-25',
+  tagName: 'React',
+  postPreview:
+    'As you can see, we import the BlogPost component, which receives the meta and the body of the post. The parameter children is the body of the blog post or, to be precise, everything that comes after the meta object. It is the function responsible for rendering the post.',
+  pageDescription: 'A very in-depth look into events in react.',
+  pageUrl: 'https://blog.agktf.com/blog/events-in-react',
+};
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>;
+
+## First Post
+
+<figure>
+  <Image
+    src={img}
+    alt="whatever"
+    width="2400"
+    height="1600"
+    layout="responsive"
+    className="object-cover"
+  />
+  <figcaption>Beautiful scene</figcaption>
+</figure>
+
+One of the things we believe as a team is that everything we make should be [sealed with a blog post](https://public.3.basecamp.com/p/toAcDMxu8Fvq2yMfd2azTuaV). Forcing ourselves to write up a short announcement post for every project we work on acts as a built-in quality check, making sure that we never call a project "done" until we feel comfortable telling the world it's out there.
+
+The problem was that up until today, we didn't actually have anywhere to publish those posts!
+
+<TagPill tagName="React" />
+
+### Choosing a platform
+
+We're a team of developers so naturally there was no way we could convince ourselves to use something off-the-shelf, and opted to build something simple and custom with [Next.js](http://nextjs.org).
+
+There are a lot of things to like about Next.js, but the primary reason we decided to use it is that it has great support for [MDX](https://mdxjs.com/), which is the format we wanted to use to author our posts.
+
+MDX is really interesting because unlike regular Markdown, you can embed live React components directly in your content. This is exciting because it unlocks a lot of opportunities in how you communicate ideas in your writing. Instead of relying only on images, videos, or code blocks, you can build interactive demos and stick them directly between two paragraphs of content, without throwing away the ergonomics of authoring in Markdown.
+
+We're planning to do a redesign and rebuild of the Tailwind CSS documentation site later this year and being able to embed interactive components makes a huge difference in our ability to teach how the framework works, so using our little blog site as a test project made a lot of sense.
+
+## Organizing our content
+
+We started by writing posts as simple MDX documents that lived directly in the `pages` directory. Eventually though we realized that just about every post would also have associated assets, for example an Open Graph image at the bare minimum.

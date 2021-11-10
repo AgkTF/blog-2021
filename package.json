@@ -6,15 +6,28 @@
     "start": "next start"
   },
   "dependencies": {
+    "@heroicons/react": "^1.0.5",
+    "@mapbox/rehype-prism": "^0.8.0",
+    "@mdx-js/loader": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "@next/bundle-analyzer": "^12.0.3",
+    "@next/mdx": "^12.0.3",
+    "@tailwindcss/typography": "^0.4.1",
+    "mdx-prism": "^0.3.4",
     "next": "latest",
+    "prismjs": "^1.25.0",
+    "prop-types": "^15.7.2",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-syntax-highlighter": "^15.4.4"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.6",
     "eslint": "^8.2.0",
     "eslint-config-next": "^12.0.3",
+    "file-loader": "^6.2.0",
     "postcss": "^8.3.5",
+    "rehype": "^12.0.0",
     "tailwindcss": "^2.2.4"
   }
 }
