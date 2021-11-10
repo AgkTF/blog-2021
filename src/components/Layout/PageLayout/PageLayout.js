@@ -9,11 +9,9 @@ const PageLayout = ({ children, pageTitle, pageDescription, pageUrl }) => {
         pageDescription={pageDescription}
         pageUrl={pageUrl}
       />
-
       <header className="sticky top-0 z-10 bg-navBg-light dark:bg-navBg-dark backdrop-blur">
         <Navbar />
       </header>
-
       {children}
     </div>
   );

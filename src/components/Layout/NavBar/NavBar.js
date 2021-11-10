@@ -1,3 +1,5 @@
+import { ThemeSwitcher } from 'components/UIElements';
+
 import Link from 'next/link';
 
 const Navbar = () => {
@@ -34,6 +36,10 @@ const Navbar = () => {
             </a>
           </Link>
         </h2>
+
+        <div>
+          <ThemeSwitcher />
+        </div>
       </div>
     </nav>
   );
