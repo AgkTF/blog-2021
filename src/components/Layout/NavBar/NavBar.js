@@ -5,7 +5,7 @@ import Link from 'next/link';
 const Navbar = () => {
   return (
     <nav className="p-4 w-full">
-      <div className="flex items-center justify-between max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl m-auto">
+      <div className="flex items-center justify-between max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-3xl m-auto">
         <h2 className="font-bold text-xl text-headline-light dark:text-headline-dark">
           <Link href="/">
             <a className="flex items-center gap-2">

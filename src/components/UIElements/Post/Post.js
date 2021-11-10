@@ -18,8 +18,7 @@ const Post = ({ children, meta }) => {
       pageTitle={`${postTitle} | Blog Post By Agk`}
       pageUrl={pageUrl}
     >
-      {/* <main className="pb-16 mt-5 mx-5 xs:mx-auto sm:mx-auto max-w-xl"> */}
-      <main className="pb-16  mt-5 max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl m-auto">
+      <main className="pb-16 mt-5 max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-3xl m-auto">
         <TagPill tagName={tagName} />
 
         <p className="mt-2 text-xs sm:text-sm text-paragraph-light dark:text-paragraph-dark font-rubik">

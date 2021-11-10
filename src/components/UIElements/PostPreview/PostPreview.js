@@ -24,7 +24,7 @@ const PostPreview = ({ tagName, date, postTitle, contentPreview, link }) => {
           </p>
         </div>
 
-        <div className="mt-2 flex items-center font-rubik text-tertiary-light dark:text-tertiary-dark hover:text-highlight self-end">
+        <div className="mt-2 flex items-center font-rubik text-tertiary-light dark:text-tertiary-dark hover:text-highlight dark:hover:text-highlight self-end">
           <span className="font-medium text-sm sm:text-base">
             <Link href={link}>Read more</Link>
           </span>

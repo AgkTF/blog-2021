@@ -11,8 +11,8 @@ const STYLES = {
     forOthers: `mt-6 lg:mt-8 bg-cardBg-light dark:bg-cardBg-dark rounded-xl shadow-lg overflow-hidden flex flex-col sm:flex-row md:flex-col min-w-[280px]`,
   },
   imgDiv: {
-    forFirst: 'relative pb-7/12 sm:pb-0 sm:h-64 sm:w-full lg:h-80 ',
-    forOthers: 'relative pb-7/12 sm:pb-0 sm:h-64 sm:w-full',
+    forFirst: 'relative pb-[58.33%] sm:pb-0 sm:h-64 sm:w-full lg:h-80 ',
+    forOthers: 'relative pb-[58.33%] sm:pb-0 sm:h-64 sm:w-full',
   },
   title: {
     forFirst: 'mt-2 sm:w-48 sm:max-w-sm lg:w-64',
