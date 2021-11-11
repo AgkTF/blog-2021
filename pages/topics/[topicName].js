@@ -1,8 +1,12 @@
 import { PageLayout } from 'components/Layout';
 import { PostPreview } from 'components/UIElements';
-import { combinedPostsByTopic } from 'Utils/postsFetcher';
+import { allPosts } from 'Utils/postsFetcher';
 
-const TopicPageLayout = ({ topicName, posts }) => {
+const TopicPageLayout = ({ topicName }) => {
+  const topicPosts = allPosts.filter(
+    post => post.module.meta.tagName === topicName
+  );
+
   return (
     <PageLayout
       pageTitle={`${topicName} Articles`}
@@ -15,7 +19,7 @@ const TopicPageLayout = ({ topicName, posts }) => {
             {topicName}
           </h1>
 
-          {combinedPostsByTopic[topicName].map(post => {
+          {topicPosts.map(post => {
             const { postTitle, publishDate, tagName, postPreview } =
               post.module.meta;
             return (
@@ -36,7 +40,10 @@ const TopicPageLayout = ({ topicName, posts }) => {
 };
 
 export async function getStaticPaths() {
-  const paths = Object.keys(combinedPostsByTopic).map(topic => ({
+  const setOfTopics = new Set(allPosts.map(post => post.module.meta.tagName));
+  const arrayOfTopics = [...setOfTopics];
+
+  const paths = arrayOfTopics.map(topic => ({
     params: {
       topicName: topic,
     },
