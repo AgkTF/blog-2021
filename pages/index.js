@@ -1,8 +1,21 @@
 import { PageLayout } from 'components/Layout';
 import { PostCard, PostPreview } from 'components/UIElements';
-import { featuredPosts, remainingPosts } from 'Utils/postsFetcher';
+import { allPosts } from 'Utils/postsFetcher';
+import {
+  featureIndexComparer,
+  dateComparer,
+} from 'Utils/helpers/array.helpers';
 
 export default function Home() {
+  const unsortedFeat = allPosts.filter(
+    filename => filename.module.meta.featureIndex
+  );
+  const featuredPosts = unsortedFeat.sort(featureIndexComparer);
+  const unsortedRemaining = allPosts.filter(
+    filename => !filename.module.meta.featureIndex
+  );
+  const remainingPosts = unsortedRemaining.sort(dateComparer);
+
   return (
     <PageLayout
       pageTitle="Personal Blog By Agk"

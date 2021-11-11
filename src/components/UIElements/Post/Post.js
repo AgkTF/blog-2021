@@ -1,5 +1,5 @@
 import { PageLayout } from 'components/Layout';
-import { TagPill, ShareIcons } from 'components/UIElements';
+import { TagPill, SharingIcons } from 'components/UIElements';
 import { enUSDateRenderer } from 'Utils/helpers/date.helpers';
 
 const Post = ({ children, meta }) => {
@@ -29,7 +29,7 @@ const Post = ({ children, meta }) => {
           {postTitle}
         </h1>
 
-        <ShareIcons />
+        <SharingIcons />
         <hr className="my-5 text-gray-200" />
 
         <article>

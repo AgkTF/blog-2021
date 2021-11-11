@@ -1,4 +1,4 @@
-const ShareIcons = () => {
+const SharingIcons = () => {
   return (
     <div className="my-5 flex gap-5 text-link-light dark:text-link-dark">
       <a href="#">
@@ -43,4 +43,4 @@ const ShareIcons = () => {
   );
 };
 
-export default ShareIcons;
+export default SharingIcons;
