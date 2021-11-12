@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 const STYLES = {
   container: {
     forFirst: `mt-6 sm:mt-8 bg-cardBg-light dark:bg-cardBg-dark rounded-xl shadow-lg overflow-hidden flex flex-col sm:flex-row min-w-[280px]`,
-    forOthers: `mt-6 lg:mt-8 bg-cardBg-light dark:bg-cardBg-dark rounded-xl shadow-lg overflow-hidden flex flex-col sm:flex-row md:flex-col min-w-[280px]`,
+    forOthers: `mt-6 lg:mt-8 bg-cardBg-light dark:bg-cardBg-dark rounded-xl shadow-lg overflow-hidden flex flex-col sm:flex-row md:flex-col min-w-[280px] lg:w-96`,
   },
   imgDiv: {
     forFirst: 'relative pb-[58.33%] sm:pb-0 sm:h-64 sm:w-full lg:h-80 ',
@@ -16,7 +16,7 @@ const STYLES = {
   },
   title: {
     forFirst: 'mt-2 sm:w-48 sm:max-w-sm lg:w-64',
-    forOthers: 'mt-2 sm:w-48 sm:max-w-sm md:w-72 lg:w-96',
+    forOthers: 'mt-2 sm:w-48 sm:max-w-sm md:w-72',
   },
 };
 
