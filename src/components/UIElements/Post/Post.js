@@ -1,6 +1,7 @@
 import { PageLayout } from 'components/Layout';
 import { TagPill, SharingIcons } from 'components/UIElements';
 import { enUSDateRenderer } from 'Utils/helpers/date.helpers';
+import { blogBaseUrl } from 'Utils/constants/global.constants';
 
 const Post = ({ children, meta }) => {
   const {
@@ -16,7 +17,7 @@ const Post = ({ children, meta }) => {
     <PageLayout
       pageDescription={pageDescription}
       pageTitle={`${postTitle} | Blog Post By Agk`}
-      pageUrl={pageUrl}
+      pageUrl={blogBaseUrl + pageUrl}
     >
       <main className="pb-16 mt-5 max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-3xl m-auto">
         <TagPill tagName={tagName} />
@@ -29,7 +30,7 @@ const Post = ({ children, meta }) => {
           {postTitle}
         </h1>
 
-        <SharingIcons pageUrl={pageUrl} />
+        <SharingIcons fullPageUrl={blogBaseUrl + pageUrl} />
         <hr className="my-5 text-gray-200" />
 
         <article>

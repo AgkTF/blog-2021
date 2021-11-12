@@ -1,5 +1,6 @@
 import { PageLayout } from 'components/Layout';
 import { PostPreview } from 'components/UIElements';
+import { blogBaseUrl } from 'Utils/constants/global.constants';
 import { combinedPostsByTopic } from 'Utils/postsFetcher';
 
 const TopicPageLayout = ({ topicName }) => {
@@ -7,7 +8,7 @@ const TopicPageLayout = ({ topicName }) => {
     <PageLayout
       pageTitle={`${topicName} Articles`}
       pageDescription={`The homepage for the articles related to ${topicName}.`}
-      pageUrl={`https://blog.agktf.com/topics/${topicName}`}
+      pageUrl={`${blogBaseUrl}/topics/${topicName}`}
     >
       <main className="pb-16 mt-5 max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-3xl m-auto">
         <section className="mt-6 sm:mt-10 w-full">

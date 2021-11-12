@@ -5,6 +5,7 @@ import {
   featureIndexComparer,
   dateComparer,
 } from 'Utils/helpers/array.helpers';
+import { blogBaseUrl } from 'Utils/constants/global.constants';
 
 export default function Home() {
   const unsortedFeat = allPosts.filter(
@@ -20,7 +21,7 @@ export default function Home() {
     <PageLayout
       pageTitle="Personal Blog By Agk"
       pageDescription="Documenting my journey through tech. Writing about everything web dev and sometimes programming in general."
-      pageUrl="https://blog.agktf.com"
+      pageUrl={blogBaseUrl}
     >
       <main className="max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-3xl flex flex-col justify-center mx-5 xs:mx-auto">
         <section className="mt-6 sm:mt-10 w-full">

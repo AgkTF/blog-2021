@@ -5,13 +5,13 @@ import PropTypes from 'prop-types';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-const SharingIcons = ({ pageUrl }) => {
+const SharingIcons = ({ fullPageUrl }) => {
   const [isCopied, setIsCopied] = useState(false);
   return (
     <div className="my-5 flex items-center gap-5 text-link-light dark:text-link-dark">
       <a
         href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-          `🔥 Check out this blog post on ${pageUrl}`
+          `🔥 Check out this blog post on ${fullPageUrl}`
         )}`}
         target="_blank"
         rel="noopener noreferrer"
@@ -28,7 +28,7 @@ const SharingIcons = ({ pageUrl }) => {
 
       <a
         href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-          pageUrl
+          fullPageUrl
         )}`}
         target="_blank"
         rel="noopener noreferrer"
@@ -46,10 +46,10 @@ const SharingIcons = ({ pageUrl }) => {
       <button
         onClick={() => {
           setIsCopied(true);
-          navigator.clipboard.writeText(pageUrl).then(async result => {
+          navigator.clipboard.writeText(fullPageUrl).then(async result => {
             await sleep(1000);
             setIsCopied(false);
-            console.log('copied', pageUrl);
+            console.log('copied', fullPageUrl);
           });
         }}
       >
@@ -64,7 +64,7 @@ const SharingIcons = ({ pageUrl }) => {
 };
 
 SharingIcons.propTypes = {
-  pageUrl: PropTypes.string.isRequired,
+  fullPageUrl: PropTypes.string.isRequired,
 };
 
 export default SharingIcons;

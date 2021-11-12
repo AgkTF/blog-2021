@@ -1,6 +1,6 @@
 import { TagPill, Post } from 'components/UIElements';
-import Image from 'next/image';
 import image from './3.jpg';
+import Image from 'next/image';
 
 export const meta = {
   postTitle: 'Building your blog with Next.js and Tailwind',
@@ -13,7 +13,7 @@ export const meta = {
   postPreview:
     'As you can see, we import the BlogPost component, which receives the meta and the body of the post. The parameter children is the body of the blog post or, to be precise, everything that comes after the meta object. It is the function responsible for rendering the post.',
   pageDescription: 'Building your blog with Next.js and Tailwind',
-  pageUrl: 'https://blog.agktf.com/blog/build-your-blog-with-next-and-tailwind',
+  pageUrl: '/blog/build-your-blog-with-next-and-tailwind',
 };
 
 export default ({ children }) => <Post meta={meta}>{children}</Post>;
