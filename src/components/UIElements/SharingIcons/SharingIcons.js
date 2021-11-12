@@ -9,7 +9,13 @@ const SharingIcons = ({ pageUrl }) => {
   const [isCopied, setIsCopied] = useState(false);
   return (
     <div className="my-5 flex items-center gap-5 text-link-light dark:text-link-dark">
-      <a href="#">
+      <a
+        href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+          `🔥 Check out this blog post on ${pageUrl}`
+        )}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <svg
           fill="currentColor"
           xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +26,13 @@ const SharingIcons = ({ pageUrl }) => {
         </svg>
       </a>
 
-      <a href="#">
+      <a
+        href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+          pageUrl
+        )}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <svg
           fill="currentColor"
           xmlns="http://www.w3.org/2000/svg"
