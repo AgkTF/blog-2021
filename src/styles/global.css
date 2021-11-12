@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .height-no-nav {
+    min-height: calc(100vh - 144px);
+  }
+}
+
 @layer base {
   @font-face {
     font-family: 'Sansita';
