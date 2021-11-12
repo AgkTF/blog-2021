@@ -1,35 +1,21 @@
 import { TagPill, Post } from 'components/UIElements';
 import image from './3.jpg';
-import Image from 'next/image';
 
 export const meta = {
-  postTitle: 'Building your blog with Next.js and Tailwind',
-  publishDate: '2020-11-11',
+  postTitle: 'A complete guide to interview preperation',
+  publishDate: '2020-09-13',
   updateDate: '',
-  featureIndex: 1,
-  tagName: 'Next',
+  featureIndex: 2,
+  tagName: 'Interview',
   imgPreview: { image },
-  altText: 'XPS computer',
+  altText: 'Two women in an interview',
   postPreview:
     'As you can see, we import the BlogPost component, which receives the meta and the body of the post. The parameter children is the body of the blog post or, to be precise, everything that comes after the meta object. It is the function responsible for rendering the post.',
-  pageDescription: 'Building your blog with Next.js and Tailwind',
-  pageUrl: '/blog/build-your-blog-with-next-and-tailwind',
+  pageDescription: 'A complete guide to interview preperation',
+  pageUrl: '/interview-preperation-guide',
 };
 
 export default ({ children }) => <Post meta={meta}>{children}</Post>;
-
-<figure>
-  <Image
-    src={image}
-    alt="whatever"
-    width="1920"
-    height="1282"
-    layout="responsive"
-    className="object-cover"
-    priority
-  />
-  <figcaption>XPS computer</figcaption>
-</figure>
 
 A few months back we quietly released [Heroicons](https://www.heroicons.com/), a set of free SVG icons we initially designed to support the components in Tailwind UI. Today we’re launching the official [Heroicons web experience](https://www.heroicons.com/), which makes it easier than ever to search for icons and quickly copy them to your clipboard as Tailwind-ready HTML or JSX.
 
@@ -40,21 +26,8 @@ There are currently over 220 icons available in both medium and small sizes, wit
 
 All of the icons are Tailwind-ready, and are easy to style with Tailwind’s built-in size and color utilities.
 
-```xml
-<svg
-  class="h-6 w-6 text-indigo-500"
-  xmlns="http://www.w3.org/2000/svg"
-  fill="none"
-  viewBox="0 0 24 24"
-  stroke="currentColor"
->
-  <path
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    stroke-width="2"
-    d="M17 8l4 4m0 0l-4 4m4-4H3"
-  />
-</svg>
+```bash
+git commit -m "Hello!"
 ```
 
 For best results, use h-6 w-6 for medium icons, and h-5 w-5 for small icons.
