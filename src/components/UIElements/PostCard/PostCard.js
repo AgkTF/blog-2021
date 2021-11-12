@@ -27,7 +27,7 @@ const PostCard = ({
   imgPreview,
   altText,
   firstFeatured,
-  tagName,
+  tagNames,
   link,
 }) => {
   return (
@@ -68,7 +68,9 @@ const PostCard = ({
             {enUSDateRenderer(publishDate)}
           </p>
           <div className="mt-2 flex items-center justify-start gap-2">
-            <TagPill tagName={tagName} />
+            {tagNames.map(tagName => (
+              <TagPill key={tagName} tag={tagName} />
+            ))}
           </div>
         </div>
       </div>
@@ -77,7 +79,7 @@ const PostCard = ({
 };
 
 PostCard.propTypes = {
-  tagName: PropTypes.string.isRequired,
+  tagNames: PropTypes.array.isRequired,
   postTitle: PropTypes.string.isRequired,
   imgPreview: PropTypes.string.isRequired,
   publishDate: PropTypes.string.isRequired,

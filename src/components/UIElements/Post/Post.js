@@ -5,7 +5,7 @@ import { blogBaseUrl } from 'Utils/constants/global.constants';
 
 const Post = ({ children, meta }) => {
   const {
-    tagName,
+    tagNames,
     publishDate,
     postTitle,
     updateDate,
@@ -20,7 +20,11 @@ const Post = ({ children, meta }) => {
       pageUrl={blogBaseUrl + pageUrl}
     >
       <main className="pb-16 mt-5 max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-3xl m-auto">
-        <TagPill tagName={tagName} />
+        <div className="flex items-center justify-start gap-2">
+          {tagNames.map(tagName => (
+            <TagPill key={tagName} tag={tagName} />
+          ))}
+        </div>
 
         <p className="mt-2 text-xs sm:text-sm text-paragraph-light dark:text-paragraph-dark font-rubik">
           {enUSDateRenderer(publishDate)}

@@ -6,7 +6,7 @@ import { ArrowRightIcon } from '@heroicons/react/solid';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 
-const PostPreview = ({ tagName, date, postTitle, contentPreview, link }) => {
+const PostPreview = ({ tagNames, date, postTitle, contentPreview, link }) => {
   return (
     <>
       <div className="mt-6 flex flex-col">
@@ -25,7 +25,9 @@ const PostPreview = ({ tagName, date, postTitle, contentPreview, link }) => {
 
         <div className="mt-4 flex justify-between items-center">
           <div className="flex items-center justify-start gap-2">
-            <TagPill tagName={tagName} />
+            {tagNames.map(tagName => (
+              <TagPill key={tagName} tag={tagName} />
+            ))}
           </div>
 
           <Link href={link}>
@@ -49,7 +51,7 @@ PostPreview.propTypes = {
   date: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
   contentPreview: PropTypes.string.isRequired,
-  tagName: PropTypes.string.isRequired,
+  tagNames: PropTypes.array.isRequired,
 };
 
 export default PostPreview;

@@ -17,13 +17,13 @@ const TopicPageLayout = ({ topicName }) => {
           </h1>
 
           {combinedPostsByTopic[topicName].map(post => {
-            const { postTitle, publishDate, tagName, postPreview } =
+            const { postTitle, publishDate, tagNames, postPreview } =
               post.module.meta;
             return (
               <PostPreview
                 key={post.link}
                 contentPreview={postPreview}
-                tagName={tagName}
+                tagNames={tagNames}
                 date={publishDate}
                 postTitle={postTitle}
                 link={post.link}
