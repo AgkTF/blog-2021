@@ -16,8 +16,8 @@ const STYLES = {
     forOthers: 'relative pb-[58.33%] sm:pb-0 sm:h-64 sm:w-full',
   },
   title: {
-    forFirst: 'mt-2 sm:w-48 sm:max-w-sm lg:w-64',
-    forOthers: 'mt-2 sm:w-48 sm:max-w-sm md:w-72',
+    forFirst: 'sm:w-48 sm:max-w-sm lg:w-64',
+    forOthers: 'sm:w-48 sm:max-w-sm md:w-72',
   },
 };
 
@@ -54,7 +54,6 @@ const PostCard = ({
 
       <div className="py-3 px-5 flex flex-col justify-between items-start">
         <div>
-          <TagPill tagName={tagName} />
           <Title
             postTitle={postTitle}
             link={link}
@@ -63,9 +62,15 @@ const PostCard = ({
             }
           />
         </div>
-        <p className="mt-6 text-xs text-paragraph-light dark:text-paragraph-dark font-rubik sm:text-sm">
-          {enUSDateRenderer(publishDate)}
-        </p>
+
+        <div>
+          <p className="mt-6 text-xs text-paragraph-light dark:text-paragraph-dark font-rubik sm:text-sm">
+            {enUSDateRenderer(publishDate)}
+          </p>
+          <div className="mt-2 flex items-center justify-start gap-2">
+            <TagPill tagName={tagName} />
+          </div>
+        </div>
       </div>
     </div>
   );
