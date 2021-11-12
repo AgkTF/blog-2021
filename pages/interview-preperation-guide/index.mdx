@@ -1,34 +1,23 @@
 import { TagPill, Post } from 'components/UIElements';
 import image from './3.jpg';
-import Image from 'next/image';
 
 export const meta = {
-  postTitle: 'Pair Programming: Does it really work?!',
-  publishDate: '2020-09-11',
+  postTitle: 'A complete guide to interview preperation',
+  publishDate: '2020-09-13',
   updateDate: '',
-  featureIndex: 3,
-  tagName: 'Agile',
+  featureIndex: 2,
+  tagNames: ['Interview'],
   imgPreview: { image },
-  altText: 'Two people coding',
+  blurDataURL:
+    'data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAADAAQDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAeEAABAwQDAAAAAAAAAAAAAAARAAMGAQIEBRQiQf/EABUBAQEAAAAAAAAAAAAAAAAAAAID/8QAGBEAAwEBAAAAAAAAAAAAAAAAAAECETH/2gAMAwEAAhEDEQA/AIvMprJXNljXXbrNPFap1cBFB4iIpy3iDXT/2Q==',
+  altText: 'Two women in an interview',
   postPreview:
     'As you can see, we import the BlogPost component, which receives the meta and the body of the post. The parameter children is the body of the blog post or, to be precise, everything that comes after the meta object. It is the function responsible for rendering the post.',
-  pageUrl: '/blog/pair-programming',
+  pageDescription: 'A complete guide to interview preperation',
+  pageUrl: '/interview-preperation-guide',
 };
 
 export default ({ children }) => <Post meta={meta}>{children}</Post>;
-
-<figure>
-  <Image
-    src={image}
-    alt="whatever"
-    width="1920"
-    height="1280"
-    layout="responsive"
-    className="object-cover"
-    priority
-  />
-  <figcaption>Two people looking at a computer</figcaption>
-</figure>
 
 A few months back we quietly released [Heroicons](https://www.heroicons.com/), a set of free SVG icons we initially designed to support the components in Tailwind UI. Today we’re launching the official [Heroicons web experience](https://www.heroicons.com/), which makes it easier than ever to search for icons and quickly copy them to your clipboard as Tailwind-ready HTML or JSX.
 
@@ -39,20 +28,8 @@ There are currently over 220 icons available in both medium and small sizes, wit
 
 All of the icons are Tailwind-ready, and are easy to style with Tailwind’s built-in size and color utilities.
 
-```js
-import { bradlc } from '@/authors'
-import openGraphImage from './card.jpeg'
-
-export const meta = {
-  title: 'Introducing linting for Tailwind CSS IntelliSense',
-  description: \`Today we’re releasing a new version of the Tailwind CSS IntelliSense extension for Visual Studio Code that adds Tailwind-specific linting to both your CSS and your markup.\`,
-  date: '2020-06-23T18:52:03Z',
-  authors: [bradlc],
-  image: openGraphImage,
-  discussion: 'https://github.com/tailwindcss/tailwindcss/discussions/1956',
-}
-
-// Po
+```bash
+git commit -m "Hello!"
 ```
 
 For best results, use h-6 w-6 for medium icons, and h-5 w-5 for small icons.
@@ -68,7 +45,3 @@ We’ve got a bunch of [other “Hero” domains](https://twitter.com/steveschog
 ## Got a suggestion?
 
 If you have any ideas for new icons we’d love to hear them! Head over to the [Heroicons GitHub repository](https://github.com/tailwindlabs/heroicons) and open an issue to make a suggestion.
-
-```
-
-```

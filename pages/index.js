@@ -37,8 +37,9 @@ export default function Home() {
               imgPreview={featuredPosts[0].module.meta.imgPreview.image}
               altText={featuredPosts[0].module.meta.altText}
               firstFeatured={true}
-              tagName={featuredPosts[0].module.meta.tagName}
+              tagNames={featuredPosts[0].module.meta.tagNames}
               link={featuredPosts[0].link}
+              blurDataURL={featuredPosts[0].module.meta.blurDataURL}
             />
 
             <div className="md:flex md:justify-between md:gap-4 lg:gap-8">
@@ -50,8 +51,9 @@ export default function Home() {
                   imgPreview={post.module.meta.imgPreview.image}
                   altText={post.module.meta.altText}
                   firstFeatured={false}
-                  tagName={post.module.meta.tagName}
+                  tagNames={post.module.meta.tagNames}
                   link={post.link}
+                  blurDataURL={post.module.meta.blurDataURL}
                 />
               ))}
             </div>
@@ -63,13 +65,13 @@ export default function Home() {
             Latest
           </h1>
           {remainingPosts.map(post => {
-            const { postTitle, publishDate, tagName, postPreview } =
+            const { postTitle, publishDate, tagNames, postPreview } =
               post.module.meta;
             return (
               <PostPreview
                 key={post.link}
                 contentPreview={postPreview}
-                tagName={tagName}
+                tagNames={tagNames}
                 date={publishDate}
                 postTitle={postTitle}
                 link={post.link}

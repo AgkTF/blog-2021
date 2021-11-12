@@ -4,8 +4,8 @@ import { blogBaseUrl } from 'Utils/constants/global.constants';
 import { allPosts } from 'Utils/postsFetcher';
 
 const TopicPageLayout = ({ topicName }) => {
-  const topicPosts = allPosts.filter(
-    post => post.module.meta.tagName === topicName
+  const topicPosts = allPosts.filter(post =>
+    post.module.meta.tagNames.includes(topicName)
   );
 
   return (
@@ -21,13 +21,13 @@ const TopicPageLayout = ({ topicName }) => {
           </h1>
 
           {topicPosts.map(post => {
-            const { postTitle, publishDate, tagName, postPreview } =
+            const { postTitle, publishDate, tagNames, postPreview } =
               post.module.meta;
             return (
               <PostPreview
                 key={post.link}
                 contentPreview={postPreview}
-                tagName={tagName}
+                tagNames={tagNames}
                 date={publishDate}
                 postTitle={postTitle}
                 link={post.link}
@@ -41,7 +41,9 @@ const TopicPageLayout = ({ topicName }) => {
 };
 
 export async function getStaticPaths() {
-  const setOfTopics = new Set(allPosts.map(post => post.module.meta.tagName));
+  const setOfTopics = new Set(
+    allPosts.map(post => [...post.module.meta.tagNames]).flat()
+  );
   const arrayOfTopics = [...setOfTopics];
 
   const paths = arrayOfTopics.map(topic => ({

@@ -3,17 +3,18 @@ import image from './3.jpg';
 import Image from 'next/image';
 
 export const meta = {
-  postTitle: 'Building your blog with Next.js and Tailwind',
-  publishDate: '2020-11-11',
+  postTitle: 'Pair Programming: Does it really work?!',
+  publishDate: '2020-09-11',
   updateDate: '',
-  featureIndex: 1,
-  tagName: 'Next',
+  featureIndex: 3,
+  tagNames: ['Agile'],
   imgPreview: { image },
-  altText: 'XPS computer',
+  blurDataURL:
+    'data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAADAAQDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAdEAABBAMBAQAAAAAAAAAAAAABAAMEBgIFESFx/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABgRAAMBAQAAAAAAAAAAAAAAAAABAhEh/9oADAMBAAIRAxEAPwCa327WaHfbIzF3uwaaE90DDB4gDh4PPgCIidStfBS3iP/Z',
+  altText: 'Two people coding',
   postPreview:
     'As you can see, we import the BlogPost component, which receives the meta and the body of the post. The parameter children is the body of the blog post or, to be precise, everything that comes after the meta object. It is the function responsible for rendering the post.',
-  pageDescription: 'Building your blog with Next.js and Tailwind',
-  pageUrl: '/blog/build-your-blog-with-next-and-tailwind',
+  pageUrl: '/pair-programming',
 };
 
 export default ({ children }) => <Post meta={meta}>{children}</Post>;
@@ -23,12 +24,14 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
     src={image}
     alt="whatever"
     width="1920"
-    height="1282"
+    height="1280"
     layout="responsive"
     className="object-cover"
     priority
+    placeholder="blur"
+    blurDataURL="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAADAAQDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAdEAABBAMBAQAAAAAAAAAAAAABAAMEBgIFESFx/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABgRAAMBAQAAAAAAAAAAAAAAAAABAhEh/9oADAMBAAIRAxEAPwCa327WaHfbIzF3uwaaE90DDB4gDh4PPgCIidStfBS3iP/Z"
   />
-  <figcaption>XPS computer</figcaption>
+  <figcaption>Two people looking at a computer</figcaption>
 </figure>
 
 A few months back we quietly released [Heroicons](https://www.heroicons.com/), a set of free SVG icons we initially designed to support the components in Tailwind UI. Today we’re launching the official [Heroicons web experience](https://www.heroicons.com/), which makes it easier than ever to search for icons and quickly copy them to your clipboard as Tailwind-ready HTML or JSX.
@@ -40,21 +43,20 @@ There are currently over 220 icons available in both medium and small sizes, wit
 
 All of the icons are Tailwind-ready, and are easy to style with Tailwind’s built-in size and color utilities.
 
-```xml
-<svg
-  class="h-6 w-6 text-indigo-500"
-  xmlns="http://www.w3.org/2000/svg"
-  fill="none"
-  viewBox="0 0 24 24"
-  stroke="currentColor"
->
-  <path
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    stroke-width="2"
-    d="M17 8l4 4m0 0l-4 4m4-4H3"
-  />
-</svg>
+```js
+import { bradlc } from '@/authors'
+import openGraphImage from './card.jpeg'
+
+export const meta = {
+  title: 'Introducing linting for Tailwind CSS IntelliSense',
+  description: \`Today we’re releasing a new version of the Tailwind CSS IntelliSense extension for Visual Studio Code that adds Tailwind-specific linting to both your CSS and your markup.\`,
+  date: '2020-06-23T18:52:03Z',
+  authors: [bradlc],
+  image: openGraphImage,
+  discussion: 'https://github.com/tailwindcss/tailwindcss/discussions/1956',
+}
+
+// Po
 ```
 
 For best results, use h-6 w-6 for medium icons, and h-5 w-5 for small icons.
@@ -70,3 +72,7 @@ We’ve got a bunch of [other “Hero” domains](https://twitter.com/steveschog
 ## Got a suggestion?
 
 If you have any ideas for new icons we’d love to hear them! Head over to the [Heroicons GitHub repository](https://github.com/tailwindlabs/heroicons) and open an issue to make a suggestion.
+
+```
+
+```

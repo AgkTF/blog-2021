@@ -6,11 +6,11 @@ export const meta = {
   postTitle: 'Events In React',
   publishDate: '2021-05-21',
   updateDate: '2021-07-25',
-  tagName: 'React',
+  tagNames: ['React'],
   postPreview:
     'As you can see, we import the BlogPost component, which receives the meta and the body of the post. The parameter children is the body of the blog post or, to be precise, everything that comes after the meta object. It is the function responsible for rendering the post.',
   pageDescription: 'A very in-depth look into events in react.',
-  pageUrl: '/blog/events-in-react',
+  pageUrl: '/events-in-react',
 };
 
 export default ({ children }) => <Post meta={meta}>{children}</Post>;
@@ -21,11 +21,13 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
   <Image
     src={img}
     alt="whatever"
-    width="2400"
-    height="1600"
+    width="1920"
+    height="1280"
     layout="responsive"
     className="object-cover"
     priority
+    placeholder="blur"
+    blurDataURL="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAADAAQDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAfEAAABQQDAAAAAAAAAAAAAAAAAQMEEQIFBhIHQVH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAA//EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AJbl/HrVjeSM2FmYpINSt6FelUqHJkcntXJ9egACw//Z"
   />
   <figcaption>Beautiful scene</figcaption>
 </figure>
@@ -34,7 +36,7 @@ One of the things we believe as a team is that everything we make should be [sea
 
 The problem was that up until today, we didn't actually have anywhere to publish those posts!
 
-<TagPill tagName="React" />
+<TagPill tag="React" />
 
 ### Choosing a platform
 
