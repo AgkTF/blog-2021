@@ -29,6 +29,7 @@ const PostCard = ({
   firstFeatured,
   tagNames,
   link,
+  blurDataURL,
 }) => {
   return (
     <div
@@ -48,6 +49,8 @@ const PostCard = ({
             layout="fill"
             className="absolute object-cover sm:relative transition duration-300 ease-in-out hover:scale-105 hover:grayscale-[60%]"
             priority
+            placeholder="blur"
+            blurDataURL={blurDataURL}
           />
         </a>
       </Link>

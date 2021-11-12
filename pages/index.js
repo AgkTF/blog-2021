@@ -39,6 +39,7 @@ export default function Home() {
               firstFeatured={true}
               tagNames={featuredPosts[0].module.meta.tagNames}
               link={featuredPosts[0].link}
+              blurDataURL={featuredPosts[0].module.meta.blurDataURL}
             />
 
             <div className="md:flex md:justify-between md:gap-4 lg:gap-8">
@@ -52,6 +53,7 @@ export default function Home() {
                   firstFeatured={false}
                   tagNames={post.module.meta.tagNames}
                   link={post.link}
+                  blurDataURL={post.module.meta.blurDataURL}
                 />
               ))}
             </div>

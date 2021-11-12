@@ -9,6 +9,8 @@ export const meta = {
   featureIndex: 3,
   tagNames: ['Agile'],
   imgPreview: { image },
+  blurDataURL:
+    'data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAADAAQDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAdEAABBAMBAQAAAAAAAAAAAAABAAMEBgIFESFx/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABgRAAMBAQAAAAAAAAAAAAAAAAABAhEh/9oADAMBAAIRAxEAPwCa327WaHfbIzF3uwaaE90DDB4gDh4PPgCIidStfBS3iP/Z',
   altText: 'Two people coding',
   postPreview:
     'As you can see, we import the BlogPost component, which receives the meta and the body of the post. The parameter children is the body of the blog post or, to be precise, everything that comes after the meta object. It is the function responsible for rendering the post.',
@@ -26,6 +28,8 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
     layout="responsive"
     className="object-cover"
     priority
+    placeholder="blur"
+    blurDataURL="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAADAAQDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAdEAABBAMBAQAAAAAAAAAAAAABAAMEBgIFESFx/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABgRAAMBAQAAAAAAAAAAAAAAAAABAhEh/9oADAMBAAIRAxEAPwCa327WaHfbIzF3uwaaE90DDB4gDh4PPgCIidStfBS3iP/Z"
   />
   <figcaption>Two people looking at a computer</figcaption>
 </figure>
