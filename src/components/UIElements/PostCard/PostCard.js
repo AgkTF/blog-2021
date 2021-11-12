@@ -3,6 +3,7 @@ import { TagPill, Title } from 'components/UIElements';
 import { enUSDateRenderer } from 'Utils/helpers/date.helpers';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import PropTypes from 'prop-types';
 
 const STYLES = {
@@ -35,19 +36,21 @@ const PostCard = ({
         firstFeatured ? STYLES.container.forFirst : STYLES.container.forOthers
       }
     >
-      <div
-        className={
-          firstFeatured ? STYLES.imgDiv.forFirst : STYLES.imgDiv.forOthers
-        }
-      >
-        <Image
-          src={imgPreview}
-          alt={altText}
-          layout="fill"
-          className="absolute object-cover sm:relative transition duration-300 ease-in-out hover:scale-105 hover:grayscale-[60%]"
-          priority
-        />
-      </div>
+      <Link href={link}>
+        <a
+          className={
+            firstFeatured ? STYLES.imgDiv.forFirst : STYLES.imgDiv.forOthers
+          }
+        >
+          <Image
+            src={imgPreview}
+            alt={altText}
+            layout="fill"
+            className="absolute object-cover sm:relative transition duration-300 ease-in-out hover:scale-105 hover:grayscale-[60%]"
+            priority
+          />
+        </a>
+      </Link>
 
       <div className="py-3 px-5 flex flex-col justify-between items-start">
         <div>
