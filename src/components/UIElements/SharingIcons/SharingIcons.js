@@ -1,6 +1,14 @@
-const SharingIcons = () => {
+import { useState } from 'react';
+
+import { DuplicateIcon, ClipboardCheckIcon } from '@heroicons/react/solid';
+import PropTypes from 'prop-types';
+
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+const SharingIcons = ({ pageUrl }) => {
+  const [isCopied, setIsCopied] = useState(false);
   return (
-    <div className="my-5 flex gap-5 text-link-light dark:text-link-dark">
+    <div className="my-5 flex items-center gap-5 text-link-light dark:text-link-dark">
       <a href="#">
         <svg
           fill="currentColor"
@@ -23,24 +31,28 @@ const SharingIcons = () => {
         </svg>
       </a>
 
-      <a href="#">
-        <svg
-          className="w-4 h-4"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
-          />
-        </svg>
-      </a>
+      <button
+        onClick={() => {
+          setIsCopied(true);
+          navigator.clipboard.writeText(pageUrl).then(async result => {
+            await sleep(1000);
+            setIsCopied(false);
+            console.log('copied', pageUrl);
+          });
+        }}
+      >
+        {isCopied ? (
+          <ClipboardCheckIcon className="w-5 h-5" />
+        ) : (
+          <DuplicateIcon className="w-5 h-5" />
+        )}
+      </button>
     </div>
   );
+};
+
+SharingIcons.propTypes = {
+  pageUrl: PropTypes.string.isRequired,
 };
 
 export default SharingIcons;

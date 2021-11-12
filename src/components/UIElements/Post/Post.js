@@ -29,7 +29,7 @@ const Post = ({ children, meta }) => {
           {postTitle}
         </h1>
 
-        <SharingIcons />
+        <SharingIcons pageUrl={pageUrl} />
         <hr className="my-5 text-gray-200" />
 
         <article>
