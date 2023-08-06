@@ -1,0 +1,249 @@
+import { TagPill, Post } from 'components/UIElements';
+import image from './3.jpg';
+import Image from 'next/image';
+
+export const meta = {
+  postTitle: 'SCSS for the record!',
+  publishDate: '2023-08-11',
+  updateDate: '',
+  featureIndex: 1,
+  tagNames: ['css'],
+  imgPreview: { image },
+  blurDataURL:
+    'data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAADAAQDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAdEAABBAMBAQAAAAAAAAAAAAABAAMEBgIFESFx/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABgRAAMBAQAAAAAAAAAAAAAAAAABAhEh/9oADAMBAAIRAxEAPwCa327WaHfbIzF3uwaaE90DDB4gDh4PPgCIidStfBS3iP/Z',
+  altText: 'Two people coding',
+  postPreview:
+    'As you can see, we import the BlogPost component, which receives the meta and the body of the post. The parameter children is the body of the blog post or, to be precise, everything that comes after the meta object. It is the function responsible for rendering the post.',
+  pageUrl: '/scss-for-the-record',
+};
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>;
+
+## Partials
+
+- _Partial_ files do **not** get compiled into CSS files.
+- They're used with `@use` rule.
+
+## Modules
+
+- Helps splitting your Sass across multiple files.
+- Use a file as a _module_ in another (loading it) by using the `@use` rule.
+- Since this file is considered "a module" 😉, you can access its variable, functions and mixins using something like dot notations for objects, as follows.
+
+```scss
+@use "colors";
+
+.inverse {
+  background-color: colors.$primary-color;
+}
+```
+
+- The compiled output of the loaded files (using `@use` rule) will be included in the output.
+
+## Mixins
+
+- What is the problem?
+  You have a group of CSS declarations that you want to reuse across your app.
+  Then **mixins** are the way to go.
+  ```scss
+  @mixin corner-icon($name, $top-or-bottom, $left-or-right) {
+    .icon-#{$name} {
+      background-image: url('/icons/#{$name}.svg');
+      position: absolute;
+      #{$top-or-bottom}: 0;
+      #{$left-or-right}: 0;
+    }
+  }
+  ```
+
+@include corner-icon("mail", top, left);
+
+````
+An example of a mixin with a interpolation.
+## Extend/Inheritance
+- You want to share a set of CSS properties from one selector to another.
+```scss
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.modal-red {
+  @extend .modal;
+  background-color: red;
+}
+````
+
+## Placeholder classes
+
+- This one is neat. It's a special type of class that only get compiled when it's extended.
+- This means that if this class is declared but never extended, it won't show up in your css output.
+
+```scss
+%message-shared {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  @extend %message-shared;
+  border-color: green;
+}
+
+// this won't show in the output because it was never extended.
+%equal-heights {
+  display: flex;
+  flex-wrap: wrap;
+}
+```
+
+## Comments
+
+There are two ways to write comments in SCSS:
+
+1. Single-line comments. These start with `//` and won't be included in the CSS output that's why they're called **silent comments**.
+
+```scss
+// This comment won't be included in the CSS.
+```
+
+2. Multi-line comments. These start with `/*` and end with `*/`.
+   They're compiled into css comments and called **loud comments**.
+   They're stripped from the output while in compressed mode.
+
+```scss
+/* But this comment will, except in compressed mode. */
+```
+
+If they're statements in this multi-line comment, they'll be evaluated before the compilation step.
+
+```scss
+/* It can also contain interpolation:
+* 1 + 1 = #{1 + 1} */
+```
+
+## Variables
+
+I don't think I need to define what a variable is 😂.
+But CSS has variables, as well. Are those different than SCSS variables? Yes, they're totally different.
+Let's see that comparison.
+
+| Sass                                                                                                                     | CSS                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| stripped away by sass (not included in the output)                                                                       | Included in the output as is                                                                           |
+| hold one value at a time                                                                                                 | can have different values for different elements                                                       |
+| They're **imperative** which means if a variable is used and then changed its value, the earlier use will stay the same. | They're **declarative** which means if you change the value, it'll affect both earlier and later uses. |
+
+```scss
+$variable: value 1;
+.rule-1 {
+  value: $variable; // this will be 1
+}
+
+$variable: value 2;
+.rule-2 {
+  value: $variable; // this will be 2
+}
+```
+
+In SASS, both`$brand-color` and `$brand_color` refer to the same variable. This is done for historical reasons when only underscores were allowed.
+
+### Default values
+
+- Default values work in SCSS the same way they do in -say- JavaScript. If the value of that variable is not defined or is null, their default values kick in.
+- It's normally valuable for library authors when they want to allow their users to override some of variables' values.
+- Only variables defined at the top of sass module with `!default` flag can be configured.
+
+```scss
+// _library.scss
+$black: #000 !default;
+$border-radius: 0.25rem !default;
+$box-shadow: 0 0.5rem 1rem rgba($black, 0.15) !default;
+
+code {
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+}
+```
+
+You can override `$black`, `$border-radius` & `$box-shadow` in your file as follows.
+
+```scss
+// style.scss
+@use 'library' with (
+  $black: #222,
+  $border-radius: 0.1rem
+);
+```
+
+## Property declarations
+
+### Nesting
+
+1. In case of css properties that start with the same prefix, like `font-weight`, `font-style` and `font-family`.
+
+```scss
+.title {
+  color: salmon;
+  font: {
+    family: base.$font-stack;
+    style: italic;
+    weight: semibold;
+  }
+}
+```
+
+This also works with properties that have shorthand version.
+
+```scss
+.info-page {
+  margin: auto {
+    bottom: 10px;
+    top: 8px;
+  }
+}
+```
+
+### Hidden Declarations
+
+In case you want a property declaration to show up based on a condition. In scss, if a declaration's value is `null` or an empty unquoted string, this property won't compile to css.
+
+```scss
+$rounded-corners: false;
+
+.button {
+  border: 1px solid black;
+  border-radius: if($rounded-corners, 5px, null);
+}
+```
+
+## Couple of unrelated stuff
+
+- Using interpolation with selectors.
+  This could be helpful if have a dynamic selector that depends on user input or something like that.
+  ```scss
+  @mixin define-emoji($name, $glyph) {
+    span.emoji-#{$name} {
+      font-family: IconFont;
+      font-variant: normal;
+      font-weight: normal;
+      content: $glyph;
+    }
+  }
+  ```
+
+@include define-emoji("women-holding-hands", "👭");
+
+```
+As you can see here, the selector name has become `span.emoji-women-holding-hands`.
+***Pretty cool.***
+## Things I might know but want to say out loud
+- *Nesting* is here so that you **stop repeating** the same selectors over and over again.
+
+An advice from SCSS docs.![[Pasted image 20230805142331.png]]
+```
