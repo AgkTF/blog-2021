@@ -1,16 +1,10 @@
 import { TagPill, Post } from 'components/UIElements';
-import image from './3.jpg';
-import Image from 'next/image';
 
 export const meta = {
   postTitle: 'SCSS for the record!',
   publishDate: '2023-08-11',
   updateDate: '',
   tagNames: ['css'],
-  imgPreview: { image },
-  blurDataURL:
-    'data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAADAAQDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAdEAABBAMBAQAAAAAAAAAAAAABAAMEBgIFESFx/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABgRAAMBAQAAAAAAAAAAAAAAAAABAhEh/9oADAMBAAIRAxEAPwCa327WaHfbIzF3uwaaE90DDB4gDh4PPgCIidStfBS3iP/Z',
-  altText: 'Two people coding',
   postPreview:
     'As you can see, we import the BlogPost component, which receives the meta and the body of the post. The parameter children is the body of the blog post or, to be precise, everything that comes after the meta object. It is the function responsible for rendering the post.',
   pageUrl: '/scss-for-the-record',
@@ -41,7 +35,7 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
 
 ## Mixins
 
-- What is the problem?
+What is the problem?
   You have a group of CSS declarations that you want to reuse across your app.
   Then **mixins** are the way to go.
   ```scss
@@ -53,14 +47,14 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
       #{$left-or-right}: 0;
     }
   }
+  @include corner-icon("mail", top, left);
   ```
 
-@include corner-icon("mail", top, left);
 
-````
-An example of a mixin with a interpolation.
-## Extend/Inheritance
-- You want to share a set of CSS properties from one selector to another.
+### An example of a mixin with a interpolation.
+*Extend/Inheritance*  
+ You want to share a set of CSS properties from one selector to another.
+
 ```scss
 .modal {
   position: fixed;
@@ -129,7 +123,8 @@ If they're statements in this multi-line comment, they'll be evaluated before th
 ## Variables
 
 I don't think I need to define what a variable is 😂.
-But CSS has variables, as well. Are those different than SCSS variables? Yes, they're totally different.
+But CSS has variables, as well.  
+Are those different than SCSS variables? Yes, they're totally different.
 Let's see that comparison.
 
 | Sass                                                                                                                     | CSS                                                                                                    |
@@ -234,15 +229,12 @@ $rounded-corners: false;
       content: $glyph;
     }
   }
+  @include define-emoji("women-holding-hands", "👭");
   ```
 
-@include define-emoji("women-holding-hands", "👭");
-
-```
 As you can see here, the selector name has become `span.emoji-women-holding-hands`.
 ***Pretty cool.***
-## Things I might know but want to say out loud
+
+## Things I know but want to say out loud anyway
 - *Nesting* is here so that you **stop repeating** the same selectors over and over again.
 
-An advice from SCSS docs.![[Pasted image 20230805142331.png]]
-```
