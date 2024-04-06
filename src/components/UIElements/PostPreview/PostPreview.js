@@ -11,7 +11,7 @@ const PostPreview = ({ tagNames, date, postTitle, contentPreview, link }) => {
     <>
       <div className="mt-6 flex flex-col">
         <div className="mt-2">
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center gap-5">
             <Title postTitle={postTitle} link={link} />
             <p className="text-xs text-paragraph-light dark:text-paragraph-dark font-rubik sm:text-sm">
               {enUSDateRenderer(date)}
